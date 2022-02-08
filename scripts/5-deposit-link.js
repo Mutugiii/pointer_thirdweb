@@ -1,4 +1,4 @@
-import { ethers } from "ethers.js";
+import { ethers } from "ethers";
 import { sdk } from "./helpers.js";
 
 // Read environment variables from .env
@@ -17,12 +17,12 @@ async function main() {
   console.log('Deposited');
 
   const balance = await packModule.getLinkBalance();
-  console.log(`LINK balance ${balance}`);
+  console.log(balance);
 }
 
 try {
   await main();
 } catch (error) {
-  console.error("Error depositing LINK to thirdweb");
+  console.error("Error depositing LINK to thirdweb", error);
   process.exit(1);
 }
