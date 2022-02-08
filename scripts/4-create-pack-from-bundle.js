@@ -1,12 +1,14 @@
 import { readFileSync } from "fs";
 import { sdk } from "./helpers.js";
 
-async function main() {
-  const bundleModuleAddress = '0xB376d86243E6c25396D0074562155a79F6aE05Da';
-  const bundleModule = sdk.getBundleModule(bundleModuleAddress);
+// Read environment variables from .env
+import dotenv from "dotenv";
+dotenv.config();
 
-  const packModuleAddress = '0xaeA97762469201f9F413E3d766C60398d90C3dbb';
-  const packModule = sdk.getPackModule(packModuleAddress);
+async function main() {
+  const bundleModule = sdk.getBundleModule(process.env.BUNDLE_MODULE_ADDRESS);
+
+  const packModule = sdk.getPackModule(process.env.PACK_MODULE_ADDRESS);
 
   console.log('Getting all NFTs from bundle');
   const nftsInBundle = await bundleModule.getAll();

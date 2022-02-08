@@ -1,9 +1,12 @@
 import { readFileSync } from "fs";
 import { sdk } from "./helpers.js";
 
+// Read environment variables from .env
+import dotenv from "dotenv";
+dotenv.config();
+
 async function main() {
-  const bundleModuleAddress = '0xB376d86243E6c25396D0074562155a79F6aE05Da';
-  const bundleModule = sdk.getBundleModule(bundleModuleAddress);
+  const bundleModule = sdk.getBundleModule(process.env.BUNDLE_MODULE_ADDRESS);
 
   console.log('Creating NFT batch...');
 
