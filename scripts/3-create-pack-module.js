@@ -5,14 +5,13 @@ async function main() {
 
   console.log('Deploying pack module...');
 
-  const packModule = await app.deployBundleModule({
+  const packModule = await app.deployPackModule({
     name: 'Lootbox Pack',
     sellerFeeBasisPoints: 0,
   });
 
   console.log(`Deployed pack module with address ${packModule.address}`);
 }
-
 
 try {
   await main();

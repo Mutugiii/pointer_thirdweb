@@ -19,7 +19,7 @@ export const sdk = new ThirdwebSDK(
 );
 
 // Thirdweb app contract address
-const appAddress = '0x562024c07635e7D8A1f4753aEb39aCc88F9D3213';
+const appAddress = '0x89Af5735E595b1E7D385420aC153925fed1e5094';
 
 export async function getApp() {
   const app = await sdk.getAppModule(appAddress);

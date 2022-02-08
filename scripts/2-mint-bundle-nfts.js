@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { sdk } from "./helpers.js";
 
 async function main() {
-  const bundleModuleAddress = '0xe0fb88d565560B6cb1294ec99d5F3087e16Dd7CB';
+  const bundleModuleAddress = '0xB376d86243E6c25396D0074562155a79F6aE05Da';
   const bundleModule = sdk.getBundleModule(bundleModuleAddress);
 
   console.log('Creating NFT batch...');
